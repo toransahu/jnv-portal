@@ -6,7 +6,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     password = serializers.CharField(write_only=True)
 
     def create(self, validated_data):
-        user = User(username = validated_data.get('username', None))
+        user = User(username=validated_data.get('username', None))
         user.set_password(validated_data.get('password', None))
         user.save()
         return user
