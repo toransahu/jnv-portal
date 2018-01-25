@@ -16,13 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from users import views
+from jnvportal import views
 from rest_framework.documentation import include_docs_urls
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^docs/', include_docs_urls(title='Users API', description='RESTful API for users'))
+    url(r'^docs/', include_docs_urls(title='Users API', description='RESTful API for users')),
 
     url(r'^$', views.api_root),
     url(r'^', include('users.urls'), name='users'),
