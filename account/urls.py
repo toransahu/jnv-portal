@@ -1,6 +1,7 @@
-from django.conf.urls import url
+from django.urls import  path
 from account import views
 
 urlpatterns = [
-    url(r'^create/$', views.create, name='create'),
+    path('', views.list_all, name='list_all'),
+    path('create/', views.create, name='create'),
     ]
