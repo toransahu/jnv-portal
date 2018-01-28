@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^docs/', include_docs_urls(title='Users API', description='RESTful API for users')),
 
-    url(r'^$', views.api_root),
+    url(r'^api$', views.api_root),
     # format: include((pattern_list, app_namespace), namespace=None)
-    url(r'^', include(('users.urls', 'users'), namespace='users',)),
+    url(r'^api/', include(('users.urls', 'users'), namespace='users',)),
 ]
