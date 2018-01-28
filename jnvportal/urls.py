@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^api$', views.api_root),
     # format: include((pattern_list, app_namespace), namespace=None)
     url(r'^api/', include(('users.urls', 'users'), namespace='users',)),
+    url(r'^account/', include(('account.urls', 'account'), namespace='account',)),
 ]
