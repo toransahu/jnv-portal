@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.urls import path, include
 from django.contrib import admin
 
 from jnvportal import views
@@ -21,11 +21,11 @@ from rest_framework.documentation import include_docs_urls
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^docs/', include_docs_urls(title='Users API', description='RESTful API for users')),
+    path('admin/', admin.site.urls),
+    path('docs/', include_docs_urls(title='Users API', description='RESTful API for users')),
 
-    url(r'^api$', views.api_root),
+    path('api/', views.api_root),
     # format: include((pattern_list, app_namespace), namespace=None)
-    url(r'^api/', include(('users.urls', 'users'), namespace='users',)),
-    url(r'^account/', include(('account.urls', 'account'), namespace='account',)),
+    path('api/', include(('users.urls', 'users'), namespace='users',)),
+    path('account/', include(('account.urls', 'account'), namespace='account',)),
 ]
