@@ -26,4 +26,6 @@ class User(AbstractUser):
     created = models.DateTimeField(auto_now_add=True)  # used to add non editable creation date, will cause problem during makemigrations, select option 1
     last_modified = models.DateTimeField(auto_now=True)  # used to update modification date
 
+    # USERNAME_FIELD = 'username'
+
 
