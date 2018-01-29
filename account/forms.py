@@ -1,7 +1,6 @@
-from django.forms import ModelForm
-from users.models import User
+from django import forms
 
-class CreateForm(ModelForm):
-    class Meta:
-        model = User
-        fields = ['username', 'password']
+
+class CreateForm(forms.Form):
+    username = forms.CharField(max_length=15)
+    password = forms.CharField(widget=forms.PasswordInput())
