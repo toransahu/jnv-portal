@@ -23,7 +23,7 @@ from rest_framework.documentation import include_docs_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('docs/', include_docs_urls(title='Users API', description='RESTful API for users')),
-
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/', views.api_root),
     # format: include((pattern_list, app_namespace), namespace=None)
     path('api/', include(('users.urls', 'users'), namespace='users',)),
