@@ -27,7 +27,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ('url', 'id', 'username',
                   'password', 'first_name', 'last_name',
-                  'email',
+                  'email', 'mobile_number', 'dob', 'gender', 'school', 'house', 'avatar',
                   )
         extra_kwargs = {
             'url': {
