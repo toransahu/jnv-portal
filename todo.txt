@@ -1,5 +1,3 @@
 1. Token Auth
 2. SignUp.. create token in Token model
 3. Login.. authenticate username password, set request.user = SETTINGS.AUTH_USER_MODEL, request.auth = token.key
-
-g
