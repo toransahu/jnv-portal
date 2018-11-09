@@ -1,8 +1,7 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser
+from rest_framework import models
 
-
-HOUSES = ('Aravali', 'Shivalik', 'Nilgiri', 'Udaygiri')
+HOUSES = ("Aravali", "Shivalik", "Nilgiri", "Udaygiri")
 
 
 # Create your models here.
@@ -15,4 +14,3 @@ class User(AbstractUser):
     # mobile_number = models.CharField(blank=True, null=True)
     # age = models.IntegerField(blank=False, null=False)
     # house = models.CharField(choices=HOUSES)
-
